@@ -68,14 +68,39 @@ CIRCUIT DIAGRAM
 
 ### PROGRAM :
  
+#include <Servo.h>
+Servo myservo;
+int value;
+double angle;
+
+void setup()
+{
+  Serial.begin(9600);
+  myservo.attach(9);
+}
+
+void loop()
+{
+  value = analogRead(A0);
+  angle = map(value, 0, 1023, 0, 180);
+  Serial.println(angle);
+  myservo.write(angle);
+  delay(15);
+}
 
 
 
 
 
-
+![Screenshot 2023-05-17 180147](https://github.com/Akashbalakrishnan/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/119291768/897e06ba-cafb-4bbf-8a1c-bedfc6b6d349)
 
 
 
 ### RESULTS: 
-Arduino uno interfacing with servo motor is learned and angular position is controlled using PWM signal.
+
+
+
+
+
+Arduino ![Screenshot 2023-05-17 180230](https://github.com/Akashbalakrishnan/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/119291768/cda41237-e330-4025-a2bb-edcf1e2b010f)
+uno interfacing with servo motor is learned and angular position is controlled using PWM signal.
